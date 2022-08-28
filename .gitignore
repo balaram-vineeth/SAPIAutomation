@@ -25,4 +25,4 @@ hs_err_pid*
 .idea
 
 target
-/test-output/HtmlReport/ExtentHtml.html
+/test-output/*
