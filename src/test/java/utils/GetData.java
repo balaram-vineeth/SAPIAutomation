@@ -6,6 +6,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Path;
 
+/**
+ * A Helper Class to read files from the resource folder
+ */
 public class GetData {
 
     public static String getFileAsString(String path) {
