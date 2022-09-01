@@ -18,3 +18,14 @@ To run the test in GitHub, the pipeline is configured as an on demand pipeline. 
 3. Click on the Run Workflow option
 4. The branch is selected as main by default, click om Run workflow
 5. Once the test is complete the report can be downloaded from the Artifacts section
+
+## Tests Explained 
+The tests can be found in the class `DictionaryEntriesTest`
+
+Here the following tests are covered
+
+* `shouldBeAbleToGetWordEntry` - This is a positive check to see that the API is able to retrieve the meaning of a work, no detailed checks are added here we just verify that the status code is 200
+* `shouldFailWhenPassingNonEnglishWords` - This is a check to see if the test fails for a non english word, the verification here is to check that the API returns 404. 
+* `shouldProvideCorrectSchemaForNotFound` - This is to check that the API provides the response in the correct schema if the word is not found, here we use RestAssured's schema validator to accomplish this. 
+* `shouldVerifyThatAllURLsInResponseAreValid` - This is to verify that the URL's provided by the API response is valid ones, we verify that the url's are valid with `UrlValidator` class from Apache Commons
+* `verifyIfTheAPIHandlesNonStandardCharacters` This to a data driven test to verify how the API handles non-standard character set, here we pass a Chinese and german word to see how the API handles these  
